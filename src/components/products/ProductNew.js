@@ -79,6 +79,8 @@ export const ProductNew = () => {
             });
             Swal.showLoading();
             const resp = await createProduct(product);
+            setValoresForm({ name: '', description: '', price: 0, inventory: 0, image: '', category: '', brand: '' });
+            listProducts();
             Swal.close();
         } catch (error) {
             console.log(error);
